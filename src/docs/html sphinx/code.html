@@ -1,0 +1,260 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Documentation of the classes &mdash; wearami_sockets 1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="wearami_sockets 1 documentation" href="index.html" />
+    <link rel="prev" title="Welcome to wearami_sockets’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-sim_client">
+<span id="documentation-of-the-classes"></span><h1>Documentation of the classes<a class="headerlink" href="#module-sim_client" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="sim_client.sim_client">
+<em class="property">class </em><code class="descclassname">sim_client.</code><code class="descname">sim_client</code><span class="sig-paren">(</span><em>name_file</em>, <em>remote_ip</em><span class="sig-paren">)</span><a class="headerlink" href="#sim_client.sim_client" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class can be used to simulate client-server connection in case a smarthwatch is not available.
+In general sends messages as strings, then can be used for other types of projects.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name_file</strong> &#8211; txt file with with data taken of the smartwacth (wearAmi offline version)</li>
+<li><strong>remote_ip</strong> &#8211; ip of the server</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Example:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sim_client</span> <span class="k">import</span><span class="o">*</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">name_file</span> <span class="o">=</span> <span class="s2">&quot;prova.txt&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">remote_ip</span> <span class="o">=</span> <span class="s2">&quot;192.168.2.1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">sim_client</span><span class="p">(</span><span class="n">name_file</span><span class="p">,</span><span class="n">remote_ip</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<span class="target" id="module-decode_message"></span><dl class="class">
+<dt id="decode_message.decode_message">
+<em class="property">class </em><code class="descclassname">decode_message.</code><code class="descname">decode_message</code><span class="sig-paren">(</span><em>string</em><span class="sig-paren">)</span><a class="headerlink" href="#decode_message.decode_message" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class decodes a message from a set of strings used in the wearAmi programs. Because there are different format it is necessary specify the delimiter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>string</strong> &#8211; delimiter used. Example &#8221;;&#8221;</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="decode_message.decode_message.decode">
+<code class="descname">decode</code><span class="sig-paren">(</span><em>line</em><span class="sig-paren">)</span><a class="headerlink" href="#decode_message.decode_message.decode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Acceleration decodification</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>line</strong> &#8211; string with a sample of the accelerometer or gyroscope sensor</li>
+<li><strong>remote_ip</strong> &#8211; ip of the server</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li>success: True if the string has the correct format</li>
+<li>option: if option == 0 then is aceleration data, if option = =1 then is gyroscope data</li>
+<li>value1: x value</li>
+<li>value2: y value</li>
+<li>value3: z value</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>An example of a format used for a wearAmi program is:</p>
+<ul class="simple">
+<li>&lt;indicator&gt;;number;x_value;y_value:z_value</li>
+</ul>
+<p>where &lt;indicator&gt; can be a (acceleration) or y (gyroscope),</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-GUI_server"></span><dl class="class">
+<dt id="GUI_server.GuiPart">
+<em class="property">class </em><code class="descclassname">GUI_server.</code><code class="descname">GuiPart</code><span class="sig-paren">(</span><em>master</em>, <em>stopserver</em>, <em>startserver</em>, <em>maxp</em><span class="sig-paren">)</span><a class="headerlink" href="#GUI_server.GuiPart" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="GUI_server.GuiPart.changex">
+<code class="descname">changex</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#GUI_server.GuiPart.changex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the x axis dimension of the figure
+:param val: number of samples</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI_server.GuiPart.getGesture">
+<code class="descname">getGesture</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GUI_server.GuiPart.getGesture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function used to save a gesture</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI_server.GuiPart.initUI">
+<code class="descname">initUI</code><span class="sig-paren">(</span><em>stopserver</em>, <em>startserver</em><span class="sig-paren">)</span><a class="headerlink" href="#GUI_server.GuiPart.initUI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Definition of the GUI</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>stopserver</strong> &#8211; function used to stop the communication (will be used in a button event)</li>
+<li><strong>startserver</strong> &#8211; function used to start the communication (will be used in a button event)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI_server.GuiPart.plotData">
+<code class="descname">plotData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GUI_server.GuiPart.plotData" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plot the data obtained (Online)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI_server.GuiPart.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GUI_server.GuiPart.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save sample in the folder that was defined</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI_server.GuiPart.see">
+<code class="descname">see</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GUI_server.GuiPart.see" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start new thread to plot the data</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI_server.GuiPart.showAcce">
+<code class="descname">showAcce</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GUI_server.GuiPart.showAcce" title="Permalink to this definition">¶</a></dt>
+<dd><p>hange mode to show the data of the Accelerometer</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI_server.GuiPart.showGyro">
+<code class="descname">showGyro</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GUI_server.GuiPart.showGyro" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change mode to show the data of the Gyroscope</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="GUI_server.ThreadedClient">
+<em class="property">class </em><code class="descclassname">GUI_server.</code><code class="descname">ThreadedClient</code><span class="sig-paren">(</span><em>master</em><span class="sig-paren">)</span><a class="headerlink" href="#GUI_server.ThreadedClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>New thread used to read the data via sockets</p>
+<dl class="method">
+<dt id="GUI_server.ThreadedClient.startserver">
+<code class="descname">startserver</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GUI_server.ThreadedClient.startserver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to start a new thread for the server</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI_server.ThreadedClient.stopserver">
+<code class="descname">stopserver</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GUI_server.ThreadedClient.stopserver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to stop the server execution</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="GUI_server.ThreadedClient.workerThread">
+<code class="descname">workerThread</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#GUI_server.ThreadedClient.workerThread" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is where is handle the asynchronous I/O. A server must perform the sequence socket(), bind(), listen(), accept()</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to wearami_sockets&#8217;s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/code.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, Luis Enrique Coronado Zuniga.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/code.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
