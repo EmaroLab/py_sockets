@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<package>
+  <name>wearami_sockets</name>  <!-- Change by the name of your package  -->
+  <version>0.0.1</version>
+  <description>
+  ROS package for client-server comunication using sockets for human gestures recognition
+  </description> <!-- Change the autor data  -->
+  <maintainer email="enriquecoronadozu@gmail.com">
+    EMARO+ ,University of Genoa
+  </maintainer>
+    <license>BSD</license>
+  <url type="repository">
+  https://github.com/enriquecoronadozu/baxter_pointpy.git
+  </url>
+  <author>Luis Enrique Coronado </author>
+  <!-- The *_depend tags are used to specify dependencies -->
+  <!-- Dependencies can be catkin packages or system dependencies -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <!-- Baxter dependences -->
+  <build_depend>rospy</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>actionlib</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>control_msgs</build_depend>
+  <build_depend>trajectory_msgs</build_depend>
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>dynamic_reconfigure</build_depend>
+  <build_depend>baxter_core_msgs</build_depend>
+  <build_depend>baxter_interface</build_depend>
+
+  <run_depend>rospy</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>actionlib</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>control_msgs</run_depend>
+  <run_depend>trajectory_msgs</run_depend>
+  <run_depend>cv_bridge</run_depend>
+  <run_depend>dynamic_reconfigure</run_depend>
+  <run_depend>baxter_core_msgs</run_depend>
+  <run_depend>baxter_interface</run_depend>
+
+</package>
