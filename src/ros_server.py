@@ -14,7 +14,7 @@ import signal
 import socket   
 import select
 import Queue
-from decode_messade import*
+from decode_message import*
 
 def signal_handler(signal, frame):
 	"""Signal handler of the data"""
